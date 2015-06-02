@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.cranberrygame.cordova.plugin.ad.admob.millennialmedia"
+    version="1.0.2">
+	
+    <name>Cordova Admob-MillennialMedia Mediation Plugin</name>
+    <description>Cordova Admob-MillennialMedia Mediation Plugin</description>
+    <author>Sang Ki Kwon (Cranberrygame)</author>		
+    <license>MIT</license>
+    <keywords>cordova,plugin,ad,admob,monetisation,millennialmedia,mediation</keywords>
+    <repo>https://github.com/cranberrygame/cordova-plugin-ad-admob</repo>
+    <issue>https://github.com/cranberrygame/cordova-plugin-ad-admob/issues</issue> 	
+	<engines>
+	    <engine name="cordova" version=">=3.0.0" />
+	</engines>
+	
+	<!-- android -->
+    <platform name="android">
+        <source-file src="src/android/MMAdMobAdapter_1_7_0.jar" target-dir="libs" framework="true" />
+	
+		<!-- dependency -->
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<activity android:name="com.millennialmedia.android.MMActivity"
+			android:theme="@android:style/Theme.Translucent.NoTitleBar" 
+			android:configChanges="keyboardHidden|orientation|keyboard" >
+			</activity>
+		</config-file>
+		<config-file target="AndroidManifest.xml" parent="/*">
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-feature android:name="android.hardware.microphone" android:required="false" />
+		</config-file>
+		<!-- cranberrygame start: com.google.playservices -->
+<!--		
+		<config-file target="AndroidManifest.xml" parent="/manifest/application">
+			<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+		</config-file>
+-->		
+		<!-- cranberrygame end -->
+        <source-file src="src/android/MMSDK.jar" target-dir="libs" />
+        <source-file src="src/android/nmdp_speech_kit.jar" target-dir="libs" />
+        <source-file src="src/android/armeabi/libnmsp_speex.so" target-dir="libs/armeabi" />
+		<!-- cranberrygame start: com.google.playservices -->
+<!--		
+		<source-file src="src/android/google-play-services.jar" target-dir="libs" />
+		<source-file src="src/android/version.xml" target-dir="res/values" />
+-->		
+		<!-- cranberrygame end -->
+		
+<!--
+		<dependency id="com.google.playservices" url="https://github.com/MobileChromeApps/google-play-services" commit="1f56399572d255193f8f9564843df60e50938e69" />
+-->		
+		<dependency id="com.google.playservices@21.0.0" />
+    </platform>
+
+	<!-- ios -->
+    <platform name="ios">	
+		<header-file src="src/ios/GADMillennialExtras.h" />
+        <source-file src="src/ios/libAdapterMillennial.a" framework="true" />
+
+		<!-- dependency -->
+		<framework src="src/ios/MillennialMedia.framework" custom="true"/>
+        <framework src="src/ios/SpeechKit.framework" custom="true"/>		
+        <framework src="AdSupport.framework"/>
+        <framework src="AudioToolbox.framework"/>
+        <framework src="AVFoundation.framework"/>
+        <framework src="CFNetwork.framework"/>
+        <framework src="CoreGraphics.framework"/>
+        <framework src="CoreLocation.framework"/>
+        <framework src="EventKit.framework"/>
+        <framework src="Foundation.framework"/>
+        <framework src="MediaPlayer.framework"/>
+        <framework src="MobileCoreServices.framework"/>
+        <framework src="PassKit.framework"/>
+        <framework src="QuartzCore.framework"/>
+        <framework src="Security.framework"/>
+        <framework src="Social.framework"/>
+        <framework src="StoreKit.framework"/>
+        <framework src="SystemConfiguration.framework"/>
+        <framework src="UIKit.framework"/>
+    </platform>
+	
+	<!-- dependency -->
+	<dependency id="com.cranberrygame.cordova.plugin.ad.admob" />	
+</plugin>
