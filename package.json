@@ -1,0 +1,40 @@
+{
+  "name": "cordova-plugin-ad-admob-millennialmedia",
+  "version": "1.0.24",
+  "description": "Cordova Admob-MillennialMedia Mediation Plugin",
+  "cordova": {
+    "id": "cordova-plugin-ad-admob-millennialmedia",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cranberrygame/cordova-plugin-ad-admob-millennialmedia.git"
+  },
+  "keywords": [
+    "cordova",
+    "plugin",
+    "ad",
+    "admob",
+    "monetisation",
+    "millennialmedia",
+    "mediation",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "cranberrygame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cranberrygame/cordova-plugin-ad-admob-millennialmedia/issues"
+  },
+  "homepage": "https://github.com/cranberrygame/cordova-plugin-ad-admob-millennialmedia#readme"
+}
